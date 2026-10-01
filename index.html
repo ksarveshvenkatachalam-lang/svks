@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kunguma Sarveshwaran Venkatachalam | Product Manager</title>
+<meta name="description" content="Product manager for enterprise platforms, utilities and platform migrations. Case studies, decisions, tools and code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7F9; --surface:#FFFFFF; --ink:#1A1D26; --muted:#596171; --rule:#DCE0E6;
+  --volt:#2F4FDB; --volt-soft:#E6EBFD; --warn:#A75F00; --warn-soft:#FDF1E1; --ok:#1C7448; --ok-soft:#E3F3EA;
+  --sans:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#12151C; --surface:#1A1F29; --ink:#E7EAF0; --muted:#A2AAB8; --rule:#2C3240;
+    --volt:#8EA2FF; --volt-soft:#1F2647; --warn:#F0A64A; --warn-soft:#3A2A14; --ok:#5CCB91; --ok-soft:#173326;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12151C; --surface:#1A1F29; --ink:#E7EAF0; --muted:#A2AAB8; --rule:#2C3240;
+  --volt:#8EA2FF; --volt-soft:#1F2647; --warn:#F0A64A; --warn-soft:#3A2A14; --ok:#5CCB91; --ok-soft:#173326;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:1.125rem;line-height:1.6}
+a{color:var(--volt);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+h1,h2,h3{font-family:var(--sans);margin:0;line-height:1.12}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:62px;gap:20px}
+.mark{font-family:var(--sans);font-weight:700;color:var(--ink);text-decoration:none}
+.top nav{display:flex;gap:22px;font-family:var(--sans);font-size:.95rem}
+.top nav a{color:var(--muted);text-decoration:none}
+.top nav a:hover{color:var(--ink)}
+@media (max-width:760px){.top nav{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:72px 0 80px;align-items:start}
+.hero h1{font-size:clamp(2.3rem,5vw,3.9rem);font-weight:800;letter-spacing:-.02em;max-width:13ch}
+.hero .lede{color:var(--muted);margin:24px 0 0;max-width:33em}
+.hero .who{font-family:var(--sans);margin-top:30px;font-size:1rem;line-height:1.5}
+.hero .who b{display:block;font-size:1.1rem}
+@media (max-width:920px){.hero{grid-template-columns:1fr;gap:44px;padding-top:44px}}
+
+.journey{background:var(--surface);border:1px solid var(--rule);padding:22px 22px 18px}
+.journey h2{font-size:1.05rem;font-weight:700}
+.journey .sub{font-family:var(--sans);font-size:.9rem;color:var(--muted);margin:4px 0 14px}
+.toggle{display:inline-flex;border:1px solid var(--rule);font-family:var(--sans);font-size:.92rem;margin-bottom:16px}
+.toggle button{all:unset;cursor:pointer;padding:8px 16px}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.toggle button:focus-visible{outline:3px solid var(--volt);outline-offset:2px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:start;padding:9px 0;border-top:1px solid var(--rule);font-family:var(--sans);font-size:.95rem}
+.steps li::before{content:counter(s);font-weight:700;color:var(--muted)}
+.tag{font-size:.78rem;padding:2px 8px;white-space:nowrap}
+.tag.call{background:var(--warn-soft);color:var(--warn)}
+.tag.fine{background:var(--ok-soft);color:var(--ok)}
+.tally{display:flex;gap:28px;margin-top:14px;padding-top:14px;border-top:2px solid var(--ink);font-family:var(--sans)}
+.tally div{font-size:.88rem;color:var(--muted)}
+.tally strong{display:block;font-size:1.7rem;color:var(--ink);line-height:1.1}
+@media (prefers-reduced-motion:no-preference){.steps li{animation:in .35s ease-out both}@keyframes in{from{opacity:0;transform:translateX(-6px)}}}
+
+/* sections */
+section.block{padding:80px 0;border-top:1px solid var(--rule)}
+.head{display:grid;grid-template-columns:300px 1fr;gap:40px;margin-bottom:40px}
+.head h2{font-size:2.1rem;font-weight:800;letter-spacing:-.01em}
+.head p{margin:0;color:var(--muted);max-width:36em}
+@media (max-width:920px){.head{grid-template-columns:1fr;gap:12px}}
+
+.case{display:grid;grid-template-columns:300px 1fr;gap:40px;padding:34px 0;border-top:1px solid var(--rule)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case .side{font-family:var(--sans);font-size:.92rem;color:var(--muted)}
+.case .side .kind{display:block;color:var(--ink);font-weight:600;font-size:1rem;margin-bottom:6px}
+.case h3{font-size:1.45rem;font-weight:700;margin-bottom:10px;max-width:28em}
+.case p{margin:0 0 12px;max-width:38em}
+.case .pull{border-left:3px solid var(--volt);padding-left:14px;font-style:italic;color:var(--ink)}
+.case a{font-family:var(--sans);font-weight:600;font-size:.98rem}
+@media (max-width:920px){.case{grid-template-columns:1fr;gap:6px}}
+
+/* decision log */
+.scroll{overflow-x:auto}
+table.dl{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.95rem;min-width:760px}
+.dl th{text-align:left;font-weight:600;color:var(--muted);padding:10px 12px;border-bottom:2px solid var(--ink)}
+.dl td{padding:14px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+.dl td.ch{color:var(--ok);font-weight:600}
+.dl td.rj{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--rule)}
+.dl td.why{font-family:var(--serif);font-size:1rem}
+
+/* tools */
+.tools{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:28px;align-items:start}
+@media (max-width:1100px){.tools{grid-template-columns:1fr}}
+@media (max-width:920px){.tools{grid-template-columns:1fr}}
+.tool{background:var(--surface);border:1px solid var(--rule);padding:24px;min-width:0}
+.tool h3{font-size:1.3rem;margin-bottom:6px}
+.tool > p{margin:0 0 18px;color:var(--muted);font-size:1rem}
+.row{display:grid;grid-template-columns:1fr 120px;gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--rule);font-family:var(--sans);font-size:.95rem}
+.row input,.row select,.prio input,.prio select{font:inherit;font-size:.95rem;padding:7px 8px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);width:100%}
+.verdict{margin-top:16px;padding:14px 16px;font-family:var(--sans)}
+.verdict b{display:block;font-size:1.2rem;margin-bottom:4px}
+.verdict ul{margin:6px 0 0;padding-left:18px;font-family:var(--serif);font-size:.98rem}
+.v-go{background:var(--ok-soft);color:var(--ink);border-left:4px solid var(--ok)}
+.v-cond{background:var(--warn-soft);color:var(--ink);border-left:4px solid var(--warn)}
+.v-no{background:var(--warn-soft);color:var(--ink);border-left:4px solid #C2372B}
+.prio{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.92rem;min-width:560px}
+.prio th{text-align:left;color:var(--muted);font-weight:600;padding:6px 6px;border-bottom:2px solid var(--ink)}
+.prio td{padding:6px;border-bottom:1px solid var(--rule)}
+.prio td:first-child{min-width:150px}.prio td:nth-child(6){min-width:86px}.prio td,.prio th{padding-left:4px;padding-right:4px}
+.prio td.score{font-weight:700;text-align:right;white-space:nowrap}
+.prio tr.top td.score{color:var(--volt)}
+.btn{font-family:var(--sans);font-weight:600;font-size:.92rem;padding:9px 14px;background:var(--ink);color:var(--bg);border:0;cursor:pointer;margin-top:14px}
+.note{font-family:var(--sans);font-size:.85rem;color:var(--muted);margin-top:12px}
+
+/* views */
+.views{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+@media (max-width:920px){.views{grid-template-columns:1fr}}
+.view h3{font-size:1.2rem;margin-bottom:10px}
+.view p{margin:0 0 10px;font-size:1.02rem}
+
+/* code */
+.repo{display:grid;grid-template-columns:1fr auto;gap:16px;padding:16px 0;border-top:1px solid var(--rule);font-family:var(--sans)}
+.repo:last-child{border-bottom:1px solid var(--rule)}
+.repo b{font-size:1.02rem}
+.repo span{display:block;font-family:var(--serif);color:var(--muted);font-size:1rem}
+.repo em{font-style:normal;color:var(--muted);font-size:.88rem}
+
+.contact{display:grid;grid-template-columns:300px 1fr;gap:40px}
+.contact p{margin:0 0 10px;max-width:36em}
+.contact .mail{font-family:var(--sans);font-size:1.3rem;font-weight:600}
+@media (max-width:920px){.contact{grid-template-columns:1fr;gap:12px}}
+footer{border-top:1px solid var(--rule);padding:28px 0 44px;font-family:var(--sans);font-size:.88rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">K. S. Venkatachalam</a>
+    <nav aria-label="Sections"><a href="#work">Case studies</a><a href="#decisions">Decisions</a><a href="#tools">Tools</a><a href="#views">Views</a><a href="#code">Code</a><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Nothing important gets lost in the move.</h1>
+        <p class="lede">I am a product manager for enterprise platforms and the migrations that replace them. I find the problem behind the request, decide what not to build, and make sure customers, data and operations come through the change intact.</p>
+        <p class="who"><b>Kunguma Sarveshwaran Venkatachalam</b>Product Manager, Liverpool, United Kingdom</p>
+      </div>
+      <div class="journey">
+        <h2>Moving home with your energy supplier</h2>
+        <p class="sub">One journey from my discovery work. Compare it before and after a redesign.</p>
+        <div class="toggle" role="group" aria-label="Choose journey version">
+          <button type="button" data-v="today" aria-pressed="true">Today</button>
+          <button type="button" data-v="new" aria-pressed="false">Redesigned</button>
+        </div>
+        <ol class="steps" id="steps"></ol>
+        <div class="tally" aria-live="polite">
+          <div><strong id="t1"></strong>steps</div>
+          <div><strong id="t2"></strong>moments likely to cause a call</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="head">
+        <h2>Case studies</h2>
+        <p>Independent pieces of product work on problems common to utilities and enterprise platforms. Organisations are fictional and figures are illustrative; the thinking is mine.</p>
+      </div>
+
+      <article class="case">
+        <div class="side"><span class="kind">Migration strategy</span>Energy retail, 600,000 accounts</div>
+        <div>
+          <h3>Billing replatform: treating a migration as a product launch</h3>
+          <p>The request was "migrate before the licence ends". The real problem was a supplier that could not launch time of use tariffs for EV and heat pump customers. Reframing it changed the plan: four waves by customer complexity, 31 of 46 legacy features retired on usage evidence, and readiness criteria agreed before any data moved.</p>
+          <p class="pull">Customers rarely notice a migration until a bill looks different. Designing the first post migration bill prevents more contacts than any amount of back end testing.</p>
+          <a class="gh" data-path="projects/billing-replatform-readiness">Read the case study</a>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="side"><span class="kind">Product discovery</span>Energy retail customer journey</div>
+        <div>
+          <h3>Moving home: from a noisy journey to a focused first release</h3>
+          <p>Four hypotheses, an interview guide, an opportunity tree and a prioritised backlog. The evidence pointed away from the "home move hub" stakeholders liked and towards two small changes: a moving day meter reading reminder and a shorter form.</p>
+          <a class="gh" data-path="projects/moving-home-discovery">Read the discovery teardown</a>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="side"><span class="kind">Data and tooling</span>Python, synthetic data</div>
+        <div>
+          <h3>Migration reconciler that knows a lost vulnerability flag is not a typo</h3>
+          <p>A reconciliation tool that classifies differences by customer impact and recommends go or no go. On the sample data, a 97.5% clean match rate still returns no go, because three customers on the Priority Services Register lost their protections.</p>
+          <a class="gh" data-path="projects/migration-reconciler">View the code</a>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="side"><span class="kind">Technical product</span>OpenAPI 3.0</div>
+        <div>
+          <h3>Field jobs API: product decisions written into a contract</h3>
+          <p>An API for booking and tracking field engineer visits. Two hour windows instead of exact times, idempotent booking to stop duplicate visits, and "no access" as a real outcome so a missed appointment leads to rebooking rather than a dead end.</p>
+          <a class="gh" data-path="projects/field-jobs-api">Explore the specification</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="decisions">
+    <div class="wrap">
+      <div class="head">
+        <h2>Decision log</h2>
+        <p>Product management is mostly choosing. These are decisions from the case studies above, with the option I turned down and why.</p>
+      </div>
+      <div class="scroll">
+        <table class="dl">
+          <thead><tr><th>Question</th><th>Chosen</th><th>Turned down</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>How do we cut over 600,000 accounts?</td><td class="ch">Four waves by complexity</td><td class="rj">One weekend big bang</td><td class="why">Saved six weeks on paper, but would have pushed every complex case through an unproven process at once.</td></tr>
+            <tr><td>How much history moves?</td><td class="ch">24 months, rest archived read only</td><td class="rj">Full history</td><td class="why">Halved the migration volume. Older history came up in under 1% of contacts.</td></tr>
+            <tr><td>What fixes the moving home journey first?</td><td class="ch">Reading reminder and shorter form</td><td class="rj">A home move hub</td><td class="why">Estimated final readings drove the disputes. A hub solved a problem nobody had evidenced.</td></tr>
+            <tr><td>What does the API promise customers?</td><td class="ch">Two hour windows</td><td class="rj">Exact arrival times</td><td class="why">Exact times are promises the field operation cannot keep, and broken promises create calls.</td></tr>
+            <tr><td>Is 97.5% clean data good enough?</td><td class="ch">No go</td><td class="rj">Go and fix after</td><td class="why">Three vulnerable customers would lose protections. Some defects are not a percentage.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="tools">
+    <div class="wrap">
+      <div class="head">
+        <h2>Tools</h2>
+        <p>Two working tools I use to make decisions faster and in the open. They run in your browser and keep nothing.</p>
+      </div>
+      <div class="tools">
+        <div class="tool">
+          <h3>Cutover readiness check</h3>
+          <p>Enter the latest dry run results to get a go or no go recommendation with the reasons behind it.</p>
+          <div class="row"><label for="c1">Critical data issues open</label><input id="c1" type="number" min="0" value="0"></div>
+          <div class="row"><label for="c2">Accounts with major issues (%)</label><input id="c2" type="number" min="0" step="0.1" value="0.3"></div>
+          <div class="row"><label for="c3">Consecutive clean dry runs</label><input id="c3" type="number" min="0" value="2"></div>
+          <div class="row"><label for="c4">Rollback rehearsed end to end</label><select id="c4"><option>Yes</option><option>No</option></select></div>
+          <div class="row"><label for="c5">Support teams trained and briefed</label><select id="c5"><option>Yes</option><option>No</option></select></div>
+          <div class="row"><label for="c6">Vulnerable customers individually checked</label><select id="c6"><option>Yes</option><option>No</option></select></div>
+          <div class="verdict" id="cv" aria-live="polite"></div>
+        </div>
+
+        <div class="tool">
+          <h3>Prioritisation with delivery risk</h3>
+          <p>RICE scoring with one addition: a risk factor for changes that touch live operations or migrations. Edit any value and the ranking updates.</p>
+          <div class="scroll">
+            <table class="prio">
+              <thead><tr><th>Idea</th><th>Reach</th><th>Impact</th><th>Confidence %</th><th>Effort</th><th>Risk</th><th>Score</th></tr></thead>
+              <tbody id="pb"></tbody>
+            </table>
+          </div>
+          <button class="btn" id="add" type="button">Add an idea</button>
+          <p class="note">Score = Reach × Impact × Confidence ÷ Effort × risk factor (low 1.0, medium 0.8, high 0.6). Reach is customers per quarter in thousands; effort is in team weeks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="views">
+    <div class="wrap">
+      <div class="head">
+        <h2>Views</h2>
+        <p>Positions I hold on how product work should be done in large, regulated organisations.</p>
+      </div>
+      <div class="views">
+        <article class="view">
+          <h3>A migration is a product launch</h3>
+          <p>Most migrations are run as IT projects measured on data moved and dates hit. Customers judge them on something else entirely: whether their bill, their tariff and their next interaction still make sense.</p>
+          <p>Give a migration a product owner, customer success measures and a launch plan, and it stops being a cost to survive.</p>
+        </article>
+        <article class="view">
+          <h3>Some customers can never be a rounding error</h3>
+          <p>Utilities carry a duty of care for customers on the Priority Services Register. In a migration, those records deserve their own checks, their own owner and a zero tolerance threshold.</p>
+          <p>Percentages hide people. I would rather delay a cutover than explain a lost vulnerability flag.</p>
+        </article>
+        <article class="view">
+          <h3>Where AI helps discovery, and where it misleads</h3>
+          <p>Language models are excellent at clustering thousands of contact transcripts into themes in minutes. They are poor at telling you which theme matters, and they will happily summarise problems customers never had.</p>
+          <p>I use them to find patterns, then check every pattern against raw transcripts and a few real conversations.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="code">
+    <div class="wrap">
+      <div class="head">
+        <h2>In this repository</h2>
+        <p>Everything referenced on this site, with synthetic data only.</p>
+      </div>
+      <div>
+        <div class="repo"><div><b>migration-reconciler</b><span>Severity based reconciliation with go or no go thresholds.</span></div><em>Python</em></div>
+        <div class="repo"><div><b>field-jobs-api</b><span>OpenAPI 3.0 contract with the product reasoning behind it.</span></div><em>YAML</em></div>
+        <div class="repo"><div><b>billing-replatform-readiness</b><span>Wave strategy, decision log, readiness criteria and success measures.</span></div><em>Markdown</em></div>
+        <div class="repo"><div><b>moving-home-discovery</b><span>Hypotheses, interview guide, opportunity tree and first release.</span></div><em>Markdown, Mermaid</em></div>
+        <div class="repo"><div><b>index.html</b><span>This site and both tools. No build step and no tracking.</span></div><em>HTML, JavaScript</em></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap contact">
+      <h2 style="font-size:2.1rem;font-weight:800">Contact</h2>
+      <div>
+        <p>I am looking for product manager roles in the UK, particularly on enterprise platforms, utilities and large migrations. I am happy to talk through any of the work on this site.</p>
+        <p class="mail"><a href="mailto:Ksarveshvenkatachalam@gmail.com">Ksarveshvenkatachalam@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Kunguma Sarveshwaran Venkatachalam, Liverpool, United Kingdom. Case studies use fictional organisations and synthetic data.</div></footer>
+
+<script>
+/* Set this to your GitHub repository URL so case study links open the right folder. */
+const GITHUB_REPO = "https://github.com/your-username/product-portfolio";
+document.querySelectorAll(".gh").forEach(a => { a.href = GITHUB_REPO + "/tree/main/" + a.dataset.path; });
+
+/* Journey compare */
+const journeys = {
+  today: [
+    ["Find the moving home page, three menus deep", 0],
+    ["Fill a 14 field form, including the new supplier you have not chosen yet", 1],
+    ["Wait for an email confirming the request", 0],
+    ["Forget to take a meter reading on moving day", 0],
+    ["Receive a final bill based on an estimate", 1],
+    ["Dispute the final bill", 1],
+    ["Wait for the account to be corrected", 0],
+    ["Receive a corrected bill weeks later", 0]
+  ],
+  new: [
+    ["Tell us your move date and forwarding address", 0],
+    ["Get a reminder the day before you move", 0],
+    ["Snap a photo of your meter on moving day", 0],
+    ["Receive a final bill that shows which readings were used", 0]
+  ]
+};
+const stepsEl = document.getElementById("steps");
+function renderJourney(v){
+  const j = journeys[v];
+  stepsEl.innerHTML = j.map(([t,c]) => `<li><span>${t}</span>${c ? '<span class="tag call">Likely call</span>' : (v === "new" ? '<span class="tag fine">Self serve</span>' : '<span></span>')}</li>`).join("");
+  document.getElementById("t1").textContent = j.length;
+  document.getElementById("t2").textContent = j.filter(s => s[1]).length;
+  document.querySelectorAll(".toggle button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v ? "true" : "false"));
+}
+document.querySelectorAll(".toggle button").forEach(b => b.addEventListener("click", () => renderJourney(b.dataset.v)));
+renderJourney("today");
+
+/* Cutover readiness */
+function cutover(){
+  const crit = +document.getElementById("c1").value || 0;
+  const major = +document.getElementById("c2").value || 0;
+  const runs = +document.getElementById("c3").value || 0;
+  const rb = document.getElementById("c4").value === "Yes";
+  const sup = document.getElementById("c5").value === "Yes";
+  const vul = document.getElementById("c6").value === "Yes";
+  const blockers = [], conditions = [];
+  if (crit > 0) blockers.push(`${crit} critical data issue${crit > 1 ? "s" : ""} still open.`);
+  if (!vul) blockers.push("Vulnerable customers have not been individually checked.");
+  if (!rb) blockers.push("Rollback has not been rehearsed, so there is no safe way back.");
+  if (major > 0.5) blockers.push(`${major}% of accounts have major issues, above a 0.5% threshold.`);
+  if (runs < 2) conditions.push("Fewer than two consecutive clean dry runs. Results may not be repeatable.");
+  if (!sup) conditions.push("Support teams are not ready for the contact spike that follows any cutover.");
+  if (major > 0.2 && major <= 0.5) conditions.push("Major issue rate is within threshold but close to it. Assign owners before go live.");
+  const el = document.getElementById("cv");
+  if (blockers.length) {
+    el.className = "verdict v-no";
+    el.innerHTML = `<b>No go</b>Resolve these before cutover:<ul>${blockers.map(x=>`<li>${x}</li>`).join("")}</ul>`;
+  } else if (conditions.length) {
+    el.className = "verdict v-cond";
+    el.innerHTML = `<b>Go with conditions</b>Agree an owner and date for each:<ul>${conditions.map(x=>`<li>${x}</li>`).join("")}</ul>`;
+  } else {
+    el.className = "verdict v-go";
+    el.innerHTML = `<b>Go</b>All readiness criteria are met. Keep the rollback decision point in the cutover plan.`;
+  }
+}
+["c1","c2","c3","c4","c5","c6"].forEach(id => document.getElementById(id).addEventListener("input", cutover));
+cutover();
+
+/* Prioritisation */
+const RISK = {Low:1, Medium:0.8, High:0.6};
+let ideas = [
+  {n:"Moving day reading reminder", r:40, i:2, c:80, e:3, k:"Low"},
+  {n:"Shorter move out form", r:55, i:1, c:90, e:2, k:"Low"},
+  {n:"Explained final bill", r:55, i:1, c:70, e:5, k:"Medium"},
+  {n:"Home move hub", r:60, i:2, c:40, e:14, k:"High"}
+];
+const pb = document.getElementById("pb");
+const score = d => (d.r * d.i * (d.c/100) / Math.max(d.e, 0.5)) * RISK[d.k];
+function renderPrio(){
+  const order = ideas.map((d,idx)=>({d,idx,s:score(d)})).sort((a,b)=>b.s-a.s);
+  pb.innerHTML = order.map(({d,idx,s},rank) => `<tr class="${rank===0?"top":""}">
+    <td><input aria-label="Idea name" data-i="${idx}" data-f="n" value="${d.n.replace(/"/g,"&quot;")}"></td>
+    <td><input aria-label="Reach" type="number" min="0" data-i="${idx}" data-f="r" value="${d.r}"></td>
+    <td><select aria-label="Impact" data-i="${idx}" data-f="i">${[0.25,0.5,1,2,3].map(v=>`<option ${v==d.i?"selected":""}>${v}</option>`).join("")}</select></td>
+    <td><input aria-label="Confidence percent" type="number" min="0" max="100" data-i="${idx}" data-f="c" value="${d.c}"></td>
+    <td><input aria-label="Effort in weeks" type="number" min="0.5" step="0.5" data-i="${idx}" data-f="e" value="${d.e}"></td>
+    <td><select aria-label="Risk" data-i="${idx}" data-f="k">${Object.keys(RISK).map(v=>`<option ${v===d.k?"selected":""}>${v}</option>`).join("")}</select></td>
+    <td class="score">${s.toFixed(1)}</td></tr>`).join("");
+}
+pb.addEventListener("change", e => {
+  const t = e.target, d = ideas[+t.dataset.i], f = t.dataset.f;
+  d[f] = (f === "n" || f === "k") ? t.value : +t.value;
+  renderPrio();
+});
+document.getElementById("add").addEventListener("click", () => {
+  ideas.push({n:"New idea", r:10, i:1, c:50, e:2, k:"Medium"});
+  renderPrio();
+});
+renderPrio();
+</script>
+</body>
+</html>
